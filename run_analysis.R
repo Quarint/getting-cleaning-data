@@ -14,7 +14,7 @@ require(dplyr)
 ## STEP 1 : Merging the training and the test sets to create one data set
 
 # declare the directory name of your data
-dirName <- "data"
+dirName <- "UCI HAR Dataset"
 trainDir <- paste(dirName, "train", sep = "/")
 testDir <- paste(dirName, "test", sep = "/")
 
@@ -83,4 +83,4 @@ names(df) <- names
 tidy_df <- ddply(df, c("subject_id", "activity"), numcolwise(mean))
 
 # write the tidy data frame to a file
-write.csv(tidy_df, "tidy_data.csv")
+write.csv(tidy_df, "tidy_data.csv", row.names = FALSE)
